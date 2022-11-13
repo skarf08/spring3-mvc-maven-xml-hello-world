@@ -1,5 +1,5 @@
 #!/bin/bash
-ACCOUNT=849846292328
+ACCOUNT=034673175192
 REGION=ap-south-1
 SECRET_NAME=${REGION}-ecr-registry
 EMAIL=ybmadhu404@gmail.com
@@ -8,7 +8,6 @@ EMAIL=ybmadhu404@gmail.com
 #
 TOKEN=`aws ecr --region=$REGION get-authorization-token --output text --query authorizationData[].authorizationToken | base64 -d | cut -d: -f2`
 
-#
 # Create or replace registry secret
 #
 kubectl delete secret --ignore-not-found $SECRET_NAME
