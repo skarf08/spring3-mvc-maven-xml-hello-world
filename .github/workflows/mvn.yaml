@@ -1,12 +1,12 @@
 name: mavenapp
 on: [push]
 jobs:
-build:
-runs-on: self-hosted
-steps:
- - name: checkout the repo
-   uses: actions/checkout@v1
- - name: Build with Maven
-	  run: mvn package
- - name: tomcat deploy
-   run: curl -v -u admin:admin -T /home/ec2-user/actions-runner/_work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/target/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war 'http://3.109.108.158:8181/manager/text/deploy?path=/github_action_spring3'
+ build:
+   runs-on: self-hosted
+    steps:
+   - name: checkout the repo
+     uses: actions/checkout@v1
+   - name: build with maven
+     run: mvn package
+   - name: tomcat deploy
+      run: curl -v -u admin:admin -T /home/ec2-user/actions-runner/_work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/target/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war 'http://3.109.108.158:8181/manager/text/deploy?path=/github_action_spring3'
