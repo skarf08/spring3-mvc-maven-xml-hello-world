@@ -6,9 +6,9 @@ jobs:
 build:
 
 runs-on: self-hosted
-steps:
+  steps:
 - uses: actions/checkout@v1
 - name: Run a one-line script
   run: echo Hello, world!
-- name: build thr code
+- name: build the code
   run: mvn package
