@@ -1,12 +1,12 @@
 name: CI
 
 on: [push]
+
 jobs:
 build:
-runs-on: self-hosted
+  runs-on: self-hosted
   steps:
-  - uses: actions/checkout@v1
-  - name: Run a one-line script
-    run: echo Hello, world!
-  - name: build the code
-    run: mvn package
+  - name: Check out the repo
+  uses: actions/checkout@v2
+ - name: build the code
+    run: mvn package 
